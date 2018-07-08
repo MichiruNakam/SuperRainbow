@@ -96,17 +96,9 @@ void SuperRainbow::draw_string(char *str, float delay_time, uint32_t col){
   }
 }
 void SuperRainbow::drawLine(unsigned int x0, unsigned int y0, unsigned int x1, unsigned int y1, uint32_t col){
-  /*if (x1 < x0) {
-    Rainbowduino::drawLine(x1, y0, x0, y1, col);
-    return;
-  }
-  Rainbowduino::drawLine(x0, y0, x1, y1, col);*/
-  /*setPixelXY(x0, y0, col);
-  setPixelXY(x0 + (x1 - x0) / 2, y0 + (y1 - y0) / 2, col);
-  setPixelXY(x1, y1, col);*/
-  int length = ceil(sqrt(pow((int)(x1 - x0), 2) + pow((int)(y1 - y0), 2)));
-  for (int i = 0; i != length; ++i){
-    double factor = (double)i / (length - 1);
+  int length = round(sqrt(pow((int)(x1 - x0), 2) + pow((int)(y1 - y0), 2)));
+  for (int i = 0; i != length + 1; ++i){
+    double factor = (double)i / (length);
     setPixelXY(round(x0 + (int)(x1 - x0) * factor), round(y0 + (int)(y1 - y0) * factor), col);
   }
 }
