@@ -38,4 +38,4 @@ void draw_string(char *str, float delay_time, uint32_t col)
 Draw the string str moving from left to right. Each step of 1 pixel takes delay_time milliseconds. The whole message draws with the col color.
 
 void drawLine(unsigned int x0, unsigned int y0, unsigned int x1, unsigned int y1, uint32_t col)
-Draw a line from (x0, y0) to (x1, y1) with col color. This function override Rainbowduino's drawLine, allowing you to draw lines correcly even if (x1, y1) is near to origin than (x0, y0).
+Draw a line from (x0, y0) to (x1, y1) with col color. This function override Rainbowduino's drawLine, allowing you to draw lines correcly even if (x1, y1) is more near to origin than (x0, y0).
